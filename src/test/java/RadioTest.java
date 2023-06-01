@@ -55,7 +55,6 @@ public class RadioTest {
     }
 
 
-
     @Test
 
     public void checkStationAboveMax() {  //максимальный канал
@@ -136,6 +135,7 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void showCurrentVoliumAtTheMinValue() {   // уменьшает громкость
         Radio radio = new Radio();
@@ -149,6 +149,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void showCurrentVoliumAtTheMaxValue() {   // уменьшает громкость
         Radio radio = new Radio();
@@ -175,6 +176,7 @@ public class RadioTest {
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void showCurrentVoliumNextMaxWithMinValue() {  //прибавляет громкость
         Radio radio = new Radio();
