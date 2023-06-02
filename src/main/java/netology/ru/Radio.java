@@ -4,9 +4,20 @@ package netology.ru;
 public class Radio {
     private int currentStation;
     private int currentVolume;
+    private int maxStation = 9;
+
+
+    public Radio() {
+
+
+    }
+
+    public Radio(int quantity) {
+        this.maxStation = quantity - 1;
+    }
 
     public void next() {
-        if (currentStation != 9) {
+        if (currentStation != maxStation) {
             currentStation++;
             return;
         }
@@ -18,7 +29,7 @@ public class Radio {
             currentStation--;
             return;
         }
-        currentStation = 9;
+        currentStation = maxStation;
     }
 
     public void back() {
@@ -34,7 +45,7 @@ public class Radio {
             currentVolume++;
             return;
         }
-        currentVolume = 0;
+        currentVolume = 100;
     }
 
     public int getCurrentStation() {
@@ -45,7 +56,7 @@ public class Radio {
         if (currentStation < 0) {
             return;
         }
-        if (currentStation > 9) {
+        if (currentStation > maxStation) {
             return;
         }
         this.currentStation = currentStation;

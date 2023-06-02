@@ -172,10 +172,28 @@ public class RadioTest {
 
         radio.control();
 
-        int expected = 0;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void showCurrentVoliumNextMaxWithMinValue() {  //прибавляет громкость
+        Radio radio = new Radio();
 
+        radio.setCurrentVolume(0);
+
+        radio.control();
+
+        int expected = 1;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void showNomberOfStationOnTheRadio() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(15);
+        Assertions.assertEquals(15, radio.getCurrentStation());
+    }
 }
